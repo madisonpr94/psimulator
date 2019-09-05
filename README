@@ -1,0 +1,20 @@
+Psimulator is a process scheduling simulator, demonstrating a simplified version of how hardware resources are managed in a real-time environment. It was written as an assignment for a course on Operating Systems, and uses the First Come First Serve algorithm.
+
+A build script (build.sh) is included for convenience.
+	
+The program runs on standard input. To provide an input file, use piping:
+	./psimulator < input.txt
+
+Input should always begin with a declaration of the number of processor cores to be simulated:
+	NCORES <int>
+
+New processes can be declared with the NEW command, along with the timestamp at which the process is created:
+	NEW <int>
+
+After a process is declared, the commands to be simulated can be entered. These commands include:
+	CORE <int>
+	INPUT <int>
+	SSD <int>
+In all cases, the integer value denotes the amount of time in milliseconds that resource is to be used.
+
+Process commands are listed in order; in other words, each resource-using command corresponds to the last process that was declared.
